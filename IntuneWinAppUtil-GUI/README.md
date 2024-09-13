@@ -37,10 +37,10 @@ IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft
 3. **Screenshots**:
 
    - **Running the Script**:
-     ![Run with PowerShell]([https://github.com/YourRepo/PathToImage/run_with_powershell.png](https://github.com/mozalattar/mozlattarscriptmaster/blob/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png))
+     ![Run with PowerShell](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png)
 
    - **GUI Interface**:
-     ![GUI Interface]([https://github.com/YourRepo/PathToImage/gui_interface.png](https://github.com/mozalattar/mozlattarscriptmaster/blob/main/IntuneWinAppUtil-GUI/GUI%20Interface.png))
+     ![GUI Interface](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/GUI%20Interface.png)
 
 ## Notes
 
