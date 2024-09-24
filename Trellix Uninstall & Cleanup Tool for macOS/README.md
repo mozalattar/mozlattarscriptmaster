@@ -75,6 +75,6 @@ This script is licensed under the MIT License. You are free to use, modify, and 
 For any questions or support, please contact:
 - **Mohammed Alattar**
 - Email: [mozalattar@gmail.com](mailto:mozalattar@gmail.com)
-- LinkedIn: [Mohammed Z. Alattar](https://www.linkedin.com/in/mohammed-z-alattar/)
+- LinkedIn: [Mohammed Alattar](https://www.linkedin.com/in/mohammed-z-alattar/)
 
 Feel free to fork this repository, submit issues, or contribute to the script to improve its functionality.
