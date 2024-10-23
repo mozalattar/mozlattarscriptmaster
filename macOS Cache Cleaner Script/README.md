@@ -39,6 +39,10 @@ This repository contains a bash script designed to clear cache files from macOS 
 
 This script is licensed under the MIT License. You are free to use, modify, and distribute this script as per the terms of the license.
 
+## Legal Disclaimer
+
+The contents of this repository, including all scripts and associated documentation, are provided solely for internal, educational, and non-commercial use. By accessing or using this repository, you agree not to use, modify, or distribute any of the included materials for commercial purposes without express permission from the repository owner. Unauthorized use or distribution of this repository's contents may be subject to legal action. Contact the repository owner for any permissions or licensing inquiries.
+
 ## Contact
 
 For any questions or support, please contact:
