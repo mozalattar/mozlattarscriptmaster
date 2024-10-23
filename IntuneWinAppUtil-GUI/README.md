@@ -37,13 +37,11 @@ IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft
 3. **Screenshots**:
 
    - **Running the Script**:
-     
      ![Run with PowerShell](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png)
 
 
 
    - **GUI Interface**:
-     
      ![GUI Interface](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/GUI%20Interface.png)
 
 ## Notes
@@ -58,6 +56,10 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Disclaimer
 
 This project is not affiliated with or endorsed by Microsoft. It is a personal project designed to provide a user-friendly interface for the official Microsoft Win32 Content Prep Tool.
+
+## Legal Disclaimer
+
+The contents of this repository, including all scripts and associated documentation, are provided solely for internal, educational, and non-commercial use. By accessing or using this repository, you agree not to use, modify, or distribute any of the included materials for commercial purposes without express permission from the repository owner. Unauthorized use or distribution of this repository's contents may be subject to legal action. Contact the repository owner for any permissions or licensing inquiries.
 
 ## Contact
 
