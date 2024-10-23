@@ -71,10 +71,13 @@ If you need to customize the script (e.g., add more cleanup tasks or change beha
 ## License
 This script is licensed under the MIT License. You are free to use, modify, and distribute this script as per the terms of the license.
 
+## Legal Disclaimer
+The contents of this repository, including all scripts and associated documentation, are provided solely for internal, educational, and non-commercial use. By accessing or using this repository, you agree not to use, modify, or distribute any of the included materials for commercial purposes without express permission from the repository owner. Unauthorized use or distribution of this repository's contents may be subject to legal action. Contact the repository owner for any permissions or licensing inquiries.
+
 ## Contact
 For any questions or support, please contact:
 - **Mohammed Alattar**
 - Email: [mozalattar@gmail.com](mailto:mozalattar@gmail.com)
-- LinkedIn: [Mohammed Alattar](https://www.linkedin.com/in/mohammed-z-alattar/)
+- LinkedIn: [Mohammed Z. Alattar](https://www.linkedin.com/in/mohammed-z-alattar/)
 
 Feel free to fork this repository, submit issues, or contribute to the script to improve its functionality.
