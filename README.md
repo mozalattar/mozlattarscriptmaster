@@ -2,7 +2,7 @@
 
 ## About
 
-Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced bash scripting techniques and IT solutions. Created by Mohammed Alattar, a Senior Technical Support Engineer with 18 years of experience in the IT industry, this repository features scripts designed to automate, optimize, and secure IT environments. Mohammed specializes in cybersecurity, network management, IT optimization, and Microsoft Intune implementation, making him a key player in driving operational excellence and enhancing security compliance across various systems.
+Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced bash scripting techniques and IT solutions. Created by Mohammed AlAttar, a Senior Technical Support Engineer with 18 years of experience in the IT industry, this repository features scripts designed to automate, optimize, and secure IT environments. Mohammed specializes in cybersecurity, network management, IT optimization, and Microsoft Intune implementation, making him a key player in driving operational excellence and enhancing security compliance across various systems.
 
 ## Key Areas of Expertise:
 - **Cybersecurity Management**: Extensive experience in deploying and managing security solutions such as Trellix ePO, BitLocker, and Zoho ManageEngine, integrated seamlessly with Microsoft Active Directory.
@@ -19,7 +19,7 @@ Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced 
 - **Performance Optimization**: Tools and scripts aimed at improving the efficiency and effectiveness of IT infrastructure, driving user satisfaction and reducing operational issues.
 
 ## Professional Summary
-Mohammed Alattar is a seasoned IT professional with a Master's degree in Computer Security Engineering and Artificial Intelligence, and a Bachelor's degree in Information Technology. His career is marked by successful implementation of Microsoft Intune for over 500 devices, advanced knowledge in cybersecurity, and a proactive approach to IT problem-solving. Mohammed's expertise extends to project management, automation, and team leadership, making him a valuable asset in any IT-driven organization.
+I am a seasoned IT professional with a Master's degree in Computer Security Engineering and Artificial Intelligence, and a Bachelor's degree in Information Technology. My career is marked by successful implementation of Microsoft Intune for over 500 devices, advanced knowledge in cybersecurity, and a proactive approach to IT problem-solving. My expertise extends to project management, automation, and team leadership, making me a valuable asset in any IT-driven organization.
 
 ## Certifications
 - **ITIL 4 Foundation Certification**
