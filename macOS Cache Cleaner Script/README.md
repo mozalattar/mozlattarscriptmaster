@@ -46,8 +46,8 @@ The contents of this repository, including all scripts and associated documentat
 ## Contact
 
 For any questions or support, please contact:
-- **Mohammed Alattar**
+- **Mohammed AlAttar**
 - Email: [mozalattar@gmail.com](mailto:mozalattar@gmail.com)
-- LinkedIn: [Mohammed Z. Alattar](https://www.linkedin.com/in/mohammed-z-alattar/)
+- LinkedIn: [Mohammed AlAttar](https://www.linkedin.com/in/mohammed-z-alattar/)
 
 Feel free to fork this repository, submit issues, or contribute to the script to improve its functionality.
