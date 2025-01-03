@@ -35,6 +35,6 @@ I am a seasoned IT professional with a Master's degree in Computer Security Engi
 
 For inquiries or collaboration:
 - **Email**: [mozalattar@gmail.com](mailto:mozalattar@gmail.com)
-- LinkedIn: [Mohammed AlAttar](https://www.linkedin.com/in/mohammed-z-alattar/)
+- **LinkedIn**: [Mohammed AlAttar](https://www.linkedin.com/in/mohammed-z-alattar/)
 
 Feel free to explore the repository, fork it, or contribute to the scripts to further enhance their functionality.
