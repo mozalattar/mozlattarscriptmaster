@@ -22,11 +22,14 @@ Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced 
 Mohammed Alattar is a seasoned IT professional with a Master's degree in Computer Security Engineering and Artificial Intelligence, and a Bachelor's degree in Information Technology. His career is marked by successful implementation of Microsoft Intune for over 500 devices, advanced knowledge in cybersecurity, and a proactive approach to IT problem-solving. Mohammed's expertise extends to project management, automation, and team leadership, making him a valuable asset in any IT-driven organization.
 
 ## Certifications
-- **ITIL v4 Foundation**
-- **AWS Certified Solutions Architect-Associate**
+- **ITIL 4 Foundation Certification**
+- **AWS Certified Solutions Architect – Associate**
+- **CompTIA Security+**
+- **Microsoft 365 Certified: Endpoint Administrator Associate**
+- **Microsoft Certified Azure Administrator Associate**
 - **Apple Certified Support Professional (ACSP)**
 - **Google IT Support Professional**
-- **Microsoft Azure Data Engineering Associate**
+- **Google Project Management Professional Certificate**
 
 ## Contact
 
