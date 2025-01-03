@@ -76,7 +76,7 @@ The contents of this repository, including all scripts and associated documentat
 
 ## Contact
 For any questions or support, please contact:
-- **Mohammed Alattar**
+- **Mohammed AlAttar**
 - Email: [mozalattar@gmail.com](mailto:mozalattar@gmail.com)
 - LinkedIn: [Mohammed AlAttar](https://www.linkedin.com/in/mohammed-z-alattar/)
 
