@@ -2,7 +2,7 @@
 
 ## About
 
-Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced bash scripting techniques and IT solutions. Created by Mohammed AlAttar, a Senior Technical Support Engineer with 18 years of experience in the IT industry, this repository features scripts designed to automate, optimize, and secure IT environments. Mohammed specializes in cybersecurity, network management, IT optimization, and Microsoft Intune implementation, making him a key player in driving operational excellence and enhancing security compliance across various systems.
+Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced bash scripting techniques and IT solutions. Created by Mohammed AlAttar, a Senior Systems Engineer with 19 years of experience in the IT industry, this repository features scripts designed to automate, optimize, and secure IT environments. Mohammed specializes in cybersecurity, network management, IT optimization, and Microsoft Intune implementation, making me a key player in driving operational excellence and enhancing security compliance across various systems.
 
 ## Key Areas of Expertise:
 - **Cybersecurity Management**: Extensive experience in deploying and managing security solutions such as Trellix ePO, BitLocker, and Zoho ManageEngine, integrated seamlessly with Microsoft Active Directory.
@@ -22,6 +22,7 @@ Welcome to MozlattarScriptMaster, a repository dedicated to showcasing advanced 
 I am a seasoned IT professional with a Master's degree in Computer Security Engineering and Artificial Intelligence, and a Bachelor's degree in Information Technology. My career is marked by successful implementation of Microsoft Intune for over 500 devices, advanced knowledge in cybersecurity, and a proactive approach to IT problem-solving. My expertise extends to project management, automation, and team leadership, making me a valuable asset in any IT-driven organization.
 
 ## Certifications
+- **Project Management Professional (PMP)**
 - **ITIL 4 Foundation Certification**
 - **AWS Certified Solutions Architect – Associate**
 - **CompTIA Security+**
@@ -29,7 +30,6 @@ I am a seasoned IT professional with a Master's degree in Computer Security Engi
 - **Microsoft Certified Azure Administrator Associate**
 - **Apple Certified Support Professional (ACSP)**
 - **Google IT Support Professional**
-- **Google Project Management Professional Certificate**
 
 ## Contact
 
