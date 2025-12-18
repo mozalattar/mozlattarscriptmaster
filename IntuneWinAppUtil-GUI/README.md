@@ -95,12 +95,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File ".\IntuneWinAppUtil
 ## Screenshots
 
 - **Running the Script**:
-- 
-  ![Run with PowerShell](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png)
+-   ![Run with PowerShell](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png)
 
 - **GUI Interface**:
-- 
-  ![GUI Interface](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/GUI%20Interface.png)
+-   ![GUI Interface](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/GUI%20Interface.png)
 
 ## Notes
 
