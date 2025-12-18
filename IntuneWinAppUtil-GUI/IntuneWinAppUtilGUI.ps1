@@ -1,13 +1,6 @@
-# IntuneWinAppUtil GUI (fixed)
+# IntuneWinAppUtil GUI - PS1 + PS2EXE compatible
 
-# --- Force Windows PowerShell 5.1 + STA for WinForms reliability ---
-if ($PSVersionTable.PSVersion.Major -ge 6) {
-    Start-Process -FilePath "$env:WINDIR\System32\WindowsPowerShell\v1.0\powershell.exe" `
-        -ArgumentList "-NoProfile -ExecutionPolicy Bypass -STA -File `"$PSCommandPath`"" `
-        -Verb RunAs
-    exit
-}
-
+# --- Ensure WinForms runs in STA ---
 if ([System.Threading.Thread]::CurrentThread.ApartmentState -ne 'STA') {
     Start-Process -FilePath "powershell.exe" `
         -ArgumentList "-NoProfile -ExecutionPolicy Bypass -STA -File `"$PSCommandPath`"" `
@@ -18,13 +11,40 @@ if ([System.Threading.Thread]::CurrentThread.ApartmentState -ne 'STA') {
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-# --- Locate IntuneWinAppUtil.exe in the same folder as the script ---
-$ScriptDir = Split-Path -Parent $PSCommandPath
-$IntuneUtil = Join-Path $ScriptDir "IntuneWinAppUtil.exe"
+# --- Get base folder (works for .ps1 AND PS2EXE .exe) ---
+function Get-BaseDir {
+    # 1) When compiled to EXE (PS2EXE), this is the most reliable
+    try {
+        $exePath = [System.Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+        if ($exePath -and (Test-Path $exePath)) {
+            $d = Split-Path -Parent $exePath
+            if ($d) { return $d }
+        }
+    } catch {}
 
+    # 2) When running as a script
+    if ($PSScriptRoot) { return $PSScriptRoot }
+
+    # 3) Fallback
+    try {
+        $p = $MyInvocation.MyCommand.Path
+        if ($p) { return (Split-Path -Parent $p) }
+    } catch {}
+
+    return $null
+}
+
+$BaseDir = Get-BaseDir
+if (-not $BaseDir) {
+    [System.Windows.Forms.MessageBox]::Show("Cannot determine application folder.","Error") | Out-Null
+    exit
+}
+
+# --- Locate IntuneWinAppUtil.exe next to GUI ---
+$IntuneUtil = Join-Path $BaseDir "IntuneWinAppUtil.exe"
 if (!(Test-Path $IntuneUtil)) {
     [System.Windows.Forms.MessageBox]::Show(
-        "IntuneWinAppUtil.exe not found in:`n$ScriptDir`n`nPut IntuneWinAppUtil.exe next to this GUI script.",
+        "IntuneWinAppUtil.exe not found in:`n$BaseDir`n`nPlace IntuneWinAppUtil.exe next to the GUI EXE/PS1.",
         "Missing IntuneWinAppUtil.exe",
         [System.Windows.Forms.MessageBoxButtons]::OK,
         [System.Windows.Forms.MessageBoxIcon]::Error
@@ -32,10 +52,10 @@ if (!(Test-Path $IntuneUtil)) {
     exit
 }
 
-# --- Form ---
+# -------------------- UI --------------------
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "IntuneWinAppUtil GUI"
-$form.Size = New-Object System.Drawing.Size(560,260)
+$form.Size = New-Object System.Drawing.Size(560,270)
 $form.StartPosition = "CenterScreen"
 
 # Source Folder
@@ -118,15 +138,15 @@ $outputButton.Add_Click({
 # Convert Button
 $convertButton = New-Object System.Windows.Forms.Button
 $convertButton.Text = "Convert"
-$convertButton.Location = New-Object System.Drawing.Point(220,150)
+$convertButton.Location = New-Object System.Drawing.Point(220,145)
 $convertButton.Size = New-Object System.Drawing.Size(120,34)
 $form.Controls.Add($convertButton)
 
-# Status label
+# Status
 $statusLabel = New-Object System.Windows.Forms.Label
 $statusLabel.Text = ""
 $statusLabel.Location = New-Object System.Drawing.Point(10,195)
-$statusLabel.Size = New-Object System.Drawing.Size(525,20)
+$statusLabel.Size = New-Object System.Drawing.Size(525,40)
 $form.Controls.Add($statusLabel)
 
 # --- Drag & Drop (correct) ---
@@ -159,7 +179,7 @@ $outputTextBox.Add_DragDrop({
     }
 })
 
-# --- Convert ---
+# -------------------- Convert logic --------------------
 $convertButton.Add_Click({
     $sourceFolder = $sourceTextBox.Text.Trim()
     $setupPath    = $setupTextBox.Text.Trim()
@@ -178,7 +198,7 @@ $convertButton.Add_Click({
         return
     }
 
-    # IntuneWinAppUtil requires the setup file to be inside the source folder (pass leaf name to -s)
+    # IntuneWinAppUtil requires setup file to be inside source folder (and -s must be leaf name)
     $setupLeaf = Split-Path -Leaf $setupPath
     $setupInsideSource = Join-Path $sourceFolder $setupLeaf
 
@@ -197,14 +217,18 @@ $convertButton.Add_Click({
     $statusLabel.Text = "Running: IntuneWinAppUtil.exe $($args -join ' ')"
     $form.Refresh()
 
-    $p = Start-Process -FilePath $IntuneUtil -ArgumentList $args -NoNewWindow -Wait -PassThru
-
-    if ($p.ExitCode -eq 0) {
-        $statusLabel.Text = "Completed successfully."
-        [System.Windows.Forms.MessageBox]::Show("Conversion Completed","Done") | Out-Null
-    } else {
-        $statusLabel.Text = "Failed. ExitCode: $($p.ExitCode)"
-        [System.Windows.Forms.MessageBox]::Show("Conversion failed. ExitCode: $($p.ExitCode)","Failed") | Out-Null
+    try {
+        $p = Start-Process -FilePath $IntuneUtil -ArgumentList $args -NoNewWindow -Wait -PassThru
+        if ($p.ExitCode -eq 0) {
+            $statusLabel.Text = "Completed successfully."
+            [System.Windows.Forms.MessageBox]::Show("Conversion Completed","Done") | Out-Null
+        } else {
+            $statusLabel.Text = "Failed. ExitCode: $($p.ExitCode)"
+            [System.Windows.Forms.MessageBox]::Show("Conversion failed. ExitCode: $($p.ExitCode)","Failed") | Out-Null
+        }
+    } catch {
+        $statusLabel.Text = "Failed: $($_.Exception.Message)"
+        [System.Windows.Forms.MessageBox]::Show("Failed: $($_.Exception.Message)","Failed") | Out-Null
     }
 })
 
