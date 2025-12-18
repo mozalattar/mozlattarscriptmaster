@@ -1,4 +1,3 @@
-
 # IntuneWinAppUtil GUI
 
 IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft Win32 Content Prep Tool (`IntuneWinAppUtil.exe`). This GUI simplifies the process of converting application installation files into the `.intunewin` format for use with Microsoft Intune.
@@ -13,41 +12,83 @@ IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft
 ## Prerequisites
 
 - **IntuneWinAppUtil.exe**: Download the official Microsoft Win32 Content Prep Tool from the [Microsoft GitHub Repository](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool).
+- **Windows PowerShell 5.1** (recommended for GUI stability).
 
 ## Installation
 
-1. **Download the Files**:
-   - Clone or download this repository to your local machine.
-   - Download the `IntuneWinAppUtil.exe` from the Microsoft repository.
+1. **Create a Folder**:
+   - Create a folder and name it **IntuneGUI**
+   - Example:
+     ```
+     C:\IntuneGUI
+     ```
 
-2. **Setup**:
-   - Place the `IntuneWinAppUtil.exe` in the same directory as the `IntuneWinAppUtilGUI.ps1` script.
+2. **Download the Files**:
+   - Clone or download this repository.
+   - Download `IntuneWinAppUtil.exe` from the Microsoft repository.
+
+3. **Setup**:
+   - Drag & drop the following files into `C:\IntuneGUI`:
+     - `IntuneWinAppUtilGUI.ps1`
+     - `IntuneWinAppUtil.exe`
 
 ## Usage
 
-1. **Run the Script**:
-   - Right-click on `IntuneWinAppUtilGUI.ps1` and select "Run with PowerShell".
+### Run from PowerShell (Recommended)
 
-2. **Using the GUI**:
-   - **Source Folder**: Click "Browse..." to select the folder containing your source files.
-   - **Setup File**: Click "Browse..." to select the executable file (e.g., `setup.exe`) that you wish to package.
-   - **Output Folder**: Click "Browse..." to select the folder where the output `.intunewin` file will be saved.
-   - Click "Convert" to package the application.
+1. Open **PowerShell**.
+2. Navigate to the folder:
+   ```powershell
+   cd "C:\IntuneGUI"
+   ```
+3. Run the script:
+   ```powershell
+   .\IntuneWinAppUtilGUI.ps1
+   ```
 
-3. **Screenshots**:
+> **Note:** PowerShell requires `.\` to run scripts from the current directory.
 
-   - **Running the Script**:
-     ![Run with PowerShell](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png)
+### Right-Click Run
 
+- Right-click on `IntuneWinAppUtilGUI.ps1`
+- Select **Run with PowerShell**
 
+### Execution Policy (if blocked)
 
-   - **GUI Interface**:
-     ![GUI Interface](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/GUI%20Interface.png)
+If PowerShell blocks the script, run once:
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+### PowerShell 7 / GUI Not Opening
+
+If the GUI does not open (common on PowerShell 7), run explicitly with Windows PowerShell and STA mode:
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File ".\IntuneWinAppUtilGUI.ps1"
+```
+
+## Using the GUI
+
+- **Source Folder**: Select the folder containing all installer files.
+- **Setup File**: Select the installer file **located inside the Source Folder** (e.g., `setup.exe`).
+- **Output Folder**: Select the destination folder for the `.intunewin` file.
+- Click **Convert** to package the application.
+
+> **Important:** The setup file must be located inside the Source Folder. This is a requirement of Microsoft’s `IntuneWinAppUtil.exe`.
+
+## Screenshots
+
+- **Running the Script**:
+  ![Run with PowerShell](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/Running%20the%20Script.png)
+
+- **GUI Interface**:
+  ![GUI Interface](https://raw.githubusercontent.com/mozalattar/mozlattarscriptmaster/main/IntuneWinAppUtil-GUI/GUI%20Interface.png)
 
 ## Notes
 
-- Ensure that the `IntuneWinAppUtil.exe` and the `IntuneWinAppUtilGUI.ps1` script are in the same directory.
-- The tool requires PowerShell to be run with appropriate execution policies.
+- Ensure that `IntuneWinAppUtil.exe` and the `IntuneWinAppUtilGUI.ps1` script are in the same directory.
+- The setup file must reside inside the selected source folder.
+- Use Windows PowerShell 5.1 for best WinForms compatibility.
 
 ## License
 
