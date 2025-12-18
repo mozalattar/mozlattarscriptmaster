@@ -8,6 +8,7 @@ IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft
 - **Drag-and-Drop**: Supports drag-and-drop functionality for source folders and setup files.
 - **Browse Buttons**: Allows users to browse and select the source folder, setup file, and output folder.
 - **Automated Packaging**: Automates the command-line usage of the Microsoft Win32 Content Prep Tool.
+- **Portable Mode**: Can be run as a PowerShell script or as a standalone EXE.
 
 ## Prerequisites
 
@@ -28,13 +29,31 @@ IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft
    - Download `IntuneWinAppUtil.exe` from the Microsoft repository.
 
 3. **Setup**:
-   - Drag & drop the following files into `C:\IntuneGUI`:
-     - `IntuneWinAppUtilGUI.ps1`
-     - `IntuneWinAppUtil.exe`
+   - Drag & drop the required files into `C:\IntuneGUI`
+
+   **PowerShell mode**
+   - `IntuneWinAppUtilGUI.ps1`
+   - `IntuneWinAppUtil.exe`
+
+   **EXE (portable) mode**
+   - `IntuneWinAppUtilGUI.exe`
+   - `IntuneWinAppUtil.exe`
 
 ## Usage
 
-### Run from PowerShell (Recommended)
+### Option 1: Run using EXE (Recommended – Portable)
+
+1. Ensure both files are in the same folder:
+   ```
+   IntuneWinAppUtilGUI.exe
+   IntuneWinAppUtil.exe
+   ```
+2. Double-click **IntuneWinAppUtilGUI.exe**
+3. The GUI will open automatically.
+
+> No PowerShell window or execution policy changes are required when using the EXE.
+
+### Option 2: Run from PowerShell (.ps1)
 
 1. Open **PowerShell**.
 2. Navigate to the folder:
@@ -48,12 +67,7 @@ IntuneWinAppUtil GUI is a PowerShell-based graphical interface for the Microsoft
 
 > **Note:** PowerShell requires `.\` to run scripts from the current directory.
 
-### Right-Click Run
-
-- Right-click on `IntuneWinAppUtilGUI.ps1`
-- Select **Run with PowerShell**
-
-### Execution Policy (if blocked)
+### Execution Policy (PowerShell only)
 
 If PowerShell blocks the script, run once:
 ```powershell
@@ -62,7 +76,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ### PowerShell 7 / GUI Not Opening
 
-If the GUI does not open (common on PowerShell 7), run explicitly with Windows PowerShell and STA mode:
+If the GUI does not open, run explicitly with Windows PowerShell and STA mode:
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File ".\IntuneWinAppUtilGUI.ps1"
 ```
@@ -74,7 +88,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File ".\IntuneWinAppUtil
 - **Output Folder**: Select the destination folder for the `.intunewin` file.
 - Click **Convert** to package the application.
 
-> **Important:** The setup file must be located inside the Source Folder. This is a requirement of Microsoft’s `IntuneWinAppUtil.exe`.
+> **Important:**  
+> The setup file **must be located inside the Source Folder**.  
+> This is a requirement of Microsoft’s `IntuneWinAppUtil.exe`.
 
 ## Screenshots
 
@@ -86,9 +102,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File ".\IntuneWinAppUtil
 
 ## Notes
 
-- Ensure that `IntuneWinAppUtil.exe` and the `IntuneWinAppUtilGUI.ps1` script are in the same directory.
-- The setup file must reside inside the selected source folder.
-- Use Windows PowerShell 5.1 for best WinForms compatibility.
+- `IntuneWinAppUtil.exe` must always be located next to the GUI (`.ps1` or `.exe`).
+- EXE mode is fully portable and recommended for end users.
+- Use Windows PowerShell 5.1 for best WinForms compatibility when running the `.ps1`.
 
 ## License
 
@@ -100,13 +116,10 @@ This project is not affiliated with or endorsed by Microsoft. It is a personal p
 
 ## Legal Disclaimer
 
-The contents of this repository, including all scripts and associated documentation, are provided solely for internal, educational, and non-commercial use. By accessing or using this repository, you agree not to use, modify, or distribute any of the included materials for commercial purposes without express permission from the repository owner. Unauthorized use or distribution of this repository's contents may be subject to legal action. Contact the repository owner for any permissions or licensing inquiries.
+The contents of this repository, including all scripts and associated documentation, are provided solely for internal, educational, and non-commercial use.
 
 ## Contact
 
-For any questions or support, please contact:
 - **Mohammed AlAttar**
 - Email: [mozalattar@gmail.com](mailto:mozalattar@gmail.com)
 - LinkedIn: [Mohammed AlAttar](https://www.linkedin.com/in/mohammed-z-alattar/)
-
-Feel free to fork this repository, submit issues, or contribute to the script to improve its functionality.
