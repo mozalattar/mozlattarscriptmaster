@@ -25,27 +25,57 @@ Built and battle-tested across 750+ devices during a live IT General Control Rev
 ## Requirements
 
 - Windows PowerShell 5.1+ or PowerShell 7+
-- Internet access (queries `pcsupport.lenovo.com`)
+- Internet access (queries Lenovo's warranty API)
+- PowerShell Gallery access (to install `Get-LenovoInfo`)
 - A `serials.txt` file with one serial number per line
 
 ---
 
 ## Usage
 
-### Step 1 — Prepare your serial list
+### Step 1 — Install the required module
 
-Create a file called `serials.txt` in the same folder as the script:
+Open PowerShell as Administrator and run:
+
+```powershell
+Install-Script -Name Get-LenovoInfo
+```
+
+> This installs the `Get-LenovoInfo` script from the PowerShell Gallery, which is used to query Lenovo's warranty API.
+
+---
+
+### Step 2 — Set execution policy
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+```
+
+> This allows the script to run in the current PowerShell session without changing your system-wide policy.
+
+---
+
+### Step 3 — Prepare your serial list
+
+Navigate to the script folder:
+
+```powershell
+cd C:\LenovoWarrantyScanner
+```
+
+Open `serials.txt` and add your Lenovo serial numbers — one per line:
 
 ```
 PFXXXXXX
 LRXXXXXX
+MPXXXXXX
 ```
 
-One serial per line. Supports all Lenovo serial formats (ThinkPad, ThinkBook, Legion, IdeaPad, LOQ, etc.)
+> Supports all Lenovo serial formats (ThinkPad, ThinkBook, Legion, IdeaPad, LOQ, etc.)
 
 ---
 
-### Step 2 — Run the script
+### Step 4 — Run the script
 
 ```powershell
 .\Run-WarrantyCheck.ps1
@@ -53,7 +83,7 @@ One serial per line. Supports all Lenovo serial formats (ThinkPad, ThinkBook, Le
 
 ---
 
-### Step 3 — Sample Output
+### Step 5 — Sample Output
 
 ```
 Loaded 500 serials from serials.txt
@@ -67,9 +97,9 @@ Loaded 500 serials from serials.txt
 
 ---
 
-### Step 4 — CSV Output
+### Step 6 — CSV Output
 
-Results saved to `warranty_results.csv`:
+Results are automatically saved to `warranty_results.csv` in the same folder:
 
 | Serial | Status | Year Purchased | Laptop Age (Yrs) | Model |
 |--------|--------|----------------|------------------|-------|
@@ -79,36 +109,13 @@ Results saved to `warranty_results.csv`:
 
 ---
 
-## Updating Your Asset Inventory
-
-After running the script, use the companion Python script to merge warranty results into your Excel inventory:
-
-```powershell
-python update_inventory.py
-```
-
-This will:
-- Match serials between `warranty_results.csv` and your `Asset_Inventory.xlsx`
-- Update **Year of Purchase** and **Laptop Age (Yrs)** columns
-- Leave all other columns untouched
-- Export the updated file as `Asset_Inventory_updated.xlsx`
-
-**Cross-check verification is built in** — the script validates every row after update and reports:
-- ✅ Correct rows
-- ❌ Any mismatches
-- ⏭️ Serials not found in warranty data
-
----
-
 ## File Structure
 
 ```
-LenovoWarrantyScanner/
+C:\LenovoWarrantyScanner\
 ├── Run-WarrantyCheck.ps1       # Main warranty lookup script
-├── update_inventory.py         # Merges results into Excel inventory
 ├── serials.txt                 # Your input serial numbers (one per line)
-├── warranty_results.csv        # Output from warranty check
-└── README.md
+└── warranty_results.csv        # Output — auto-generated after run
 ```
 
 ---
