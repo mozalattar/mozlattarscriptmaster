@@ -157,7 +157,7 @@ This tool was purpose-built to support IT General Control Reviews and asset audi
 
 ## Notes
 
-- Serials with spaces (e.g. `PF5WRY AQ`) are handled automatically — the script strips whitespace before querying
+- Serials with spaces (e.g. `PFXXX XX`) are handled automatically — the script strips whitespace before querying
 - Duplicate serials in the input list are processed but flagged
 - Devices with no Lenovo warranty record return `Age: 0 yrs  Purchased: 2026` — these require manual verification
 - Non-Lenovo serials (HP, Dell, Mac, etc.) return no data and are safely skipped
